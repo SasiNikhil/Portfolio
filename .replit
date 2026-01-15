@@ -1,0 +1,18 @@
+run = "npm run start:full"
+
+[env]
+MONGODB_URI = ""
+NODE_ENV = "production"
+PORT = "5000"
+REACT_APP_API_URL = ""
+
+[nix]
+channel = "stable-22_11"
+
+[[ports]]
+localPort = 5000
+externalPort = 443
+
+[[ports]]
+localPort = 3000
+externalPort = 80
