@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -8,6 +9,9 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Serve frontend build
+app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 // MongoDB Connection
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio-os';
@@ -33,15 +37,7 @@ app.get('/health', (req, res) => {
 
 // Root Endpoint
 app.get('/', (req, res) => {
-  res.json({
-    message: 'Welcome to Sasi Nikhil\'s Portfolio OS Backend',
-    version: '1.0.0',
-    endpoints: {
-      health: '/health',
-      system: '/api/system',
-      messages: '/api/messages',
-    },
-  });
+  res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
