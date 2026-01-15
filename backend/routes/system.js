@@ -53,7 +53,7 @@ const systemData = {
       id: 1,
       company: 'Araneus',
       position: 'Blockchain UI Developer',
-      duration: 'Jan 2024 - Present',
+      duration: 'Jan 2024 - May 2025',
       description:
         'Developed and maintained user interfaces for blockchain applications. Collaborated with engineers to create intuitive dashboards for transaction monitoring and wallet management.',
       achievements: [
