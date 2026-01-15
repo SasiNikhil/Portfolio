@@ -1,4 +1,4 @@
-run = "npm run install:all && npm run build && cd backend && npm start"
+run = "npm install && cd backend && npm install && cd ../frontend && npm run build && cd ../backend && node server.js"
 
 [env]
 MONGODB_URI = ""
